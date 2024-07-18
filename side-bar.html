@@ -1,573 +1,451 @@
 <!DOCTYPE html>
 <html lang="vi">
-  <head>
-    <base href="" />
-    <title>
-tsh
-    </title>
-    <meta charset="utf-8" />
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
 
-    <link
-      rel="shortcut icon"
-      href="/tsh-bioplastic/public/hat-nhua/img/logo/logo-tsh-xanh.png"
-    />
+<head>
 
-    <!-- all additional css -->
-    <link
-      rel="stylesheet"
-      href="/tsh-bioplastic/public/hat-nhua/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/tsh-bioplastic/public/hat-nhua/css/elements.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/tsh-bioplastic/public/hat-nhua/style.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/tsh-bioplastic/public/hat-nhua/css/responsive.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/tsh-bioplastic/public/hat-nhua/fonts/fontawesome.6.5.1/css/all.min.css"
-    />
+  <title>
+    tsh
+  </title>
+  <meta charset="utf-8" />
 
-    <style>
-      .navbar-color {
-        background: rgba(0, 0, 0, 0)
-          linear-gradient(to right, #009e2f 0%, #9ed9b0 100%) repeat scroll 0 0;
-      }
-      .breadcrumb-area {
-        border-top: 2px dashed white;
-        background: rgba(0, 0, 0, 0)
-          linear-gradient(to right, #009e2f 0%, #9ed9b0 100%) repeat scroll 0 0;
-      }
-      .breadcrumb-area:before {
-        background: rgba(0, 0, 0, 0)
-          linear-gradient(to right, #009e2f 0%, #9ed9b0 100%) repeat scroll 0 0;
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+  <link rel="shortcut icon" href="/tsh-bioplastic/public/hat-nhua/img/logo/logo-tsh-xanh.png" />
+
+  <!-- all additional css -->
+  <link rel="stylesheet" href="/tsh-bioplastic/public/hat-nhua/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/tsh-bioplastic/public/hat-nhua/css/elements.css" />
+  <link rel="stylesheet" href="/tsh-bioplastic/public/hat-nhua/style.css" />
+  <link rel="stylesheet" href="/tsh-bioplastic/public/hat-nhua/css/responsive.css" />
+  <link rel="stylesheet" href="/tsh-bioplastic/public/hat-nhua/fonts/fontawesome.6.5.1/css/all.min.css" />
+
+  <style>
+    .navbar-color {
+      background: rgba(0, 0, 0, 0) linear-gradient(to right, #009e2f 0%, #9ed9b0 100%) repeat scroll 0 0;
+    }
+
+    .breadcrumb-area {
+      border-top: 2px dashed white;
+      background: rgba(0, 0, 0, 0) linear-gradient(to right, #009e2f 0%, #9ed9b0 100%) repeat scroll 0 0;
+    }
+
+    .breadcrumb-area:before {
+      background: rgba(0, 0, 0, 0) linear-gradient(to right, #009e2f 0%, #9ed9b0 100%) repeat scroll 0 0;
+    }
+
+    .app-content {
+      padding-top: 0px;
+    }
+
+    .landing-header .menu .menu-link.active {
+      color: #b92c2c !important;
+      background-color: rgba(239, 242, 245, 0.4);
+    }
+
+    .menu-title-gray-600 .menu-item .menu-link {
+      color: #b92c2c;
+    }
+
+    .card-body img {
+      max-width: 100%;
+    }
+
+    .hotline {
+      border-radius: 15px;
+      border: 1px dashed #ccc;
+      padding: 20px 20px 10px 20px;
+      margin-bottom: 20px;
+    }
+
+    .fs-5 {
+      font-size: 16px;
+    }
+
+    .fs-5 p strong {
+      font-size: 16px;
+    }
+
+    table {
+      border-collapse: separate;
+      border: solid 1px;
+      border-radius: 6px;
+      padding: 10px;
+    }
+
+    td,
+    th {
+      border-left: solid 1px;
+      border-top: solid 1px;
+      padding: 10px;
+    }
+
+    th {
+      border-top: none;
+    }
+
+    /*td:first-child, th:first-child {border-left: none;}*/
+    tr:first-child th {
+      font-weight: bold !important;
+      border-bottom: 1px dashed !important;
+    }
+  </style>
+
+
+  <style type="text/css">
+    .navbar-brand {
+      padding: 0;
+      padding-top: 10px;
+    }
+
+    .navbar-brand>img {
+      max-height: 150%;
+      margin-top: 0px;
+      max-width: 300px;
+    }
+
+    .navbar.affix .navbar-brand>img {
+      display: block;
+      width: auto;
+      height: auto;
+      max-height: 40px;
+      margin-top: 0px;
+      max-width: 280px;
+    }
+
+    .btn.btn-bordered-white {
+      padding: 20px;
+      font-size: 34px;
+      font-weight: bold;
+    }
+
+    .contact-box-inner {
+      background-color: #009e2f;
+    }
+
+    .contact-box-inner .address-box {
+      background-color: #009e2f;
+    }
+
+    .address-box {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+
+    .media-body>p {
+      text-align: justify;
+    }
+
+    .media-body>p:nth-of-type(1) {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .media-body>h5 {
+      text-transform: none;
+    }
+
+    .panel-body>p>img {
+      border-radius: 15px;
+      width: 100%;
+    }
+
+    .product-child {
+      margin-left: -10px !important;
+    }
+
+    .slick-dots {
+      bottom: -50px;
+    }
+
+    .awesome-feature-icon span {
+      width: 45px;
+      height: 45px;
+      margin-left: 20px;
+    }
+
+    .awesome-feature-icon i {
+      line-height: 45px;
+    }
+
+    #product-area .media-left {
+      padding-right: 10px;
+    }
+
+    .pricing-footer {
+      margin-bottom: 30px;
+    }
+
+    .single-price-table {
+      margin-bottom: 30px;
+    }
+
+    .pricing-head {
+      height: 60px;
+    }
+
+    .pricing-content {
+      height: 190px;
+      padding: 10px;
+    }
+
+    .info-details a {
+      color: white;
+    }
+
+    .img_nangluc {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .img_nangluc img {
+      border-radius: 15px;
+      width: 100%;
+    }
+
+    .hiw-mockup {
+      top: 60px;
+    }
+
+    .section-heading h2:after {
+      background: rgba(0, 0, 0, 0) url("/public/hat-nhua/img/others/line-shape-2.png") no-repeat scroll 0 0;
+    }
+
+    .member-description {
+      background: rgba(0, 0, 0, 0) linear-gradient(to right, #009e2f 0%, #9ed9b0 100%) repeat scroll 0 0;
+    }
+
+    #app-download-area:after {
+      height: 0;
+    }
+
+    /*.hinh_anh_nha_may {min-height: 480px; background-image: url('img/sliders/nha-may-abm.jpg');}*/
+    #fun-fact-area {
+      min-height: 480px;
+      background: rgba(0, 0, 0, 0) url("/public/hat-nhua/img/sliders/nha-may-abm.jpg") no-repeat scroll center center / cover;
+    }
+
+    #map {
+      background: url("/public/hat-nhua/img/maps/abmchem-location.png") no-repeat scroll center center;
+    }
+
+    .contact-fix {
+      position: fixed;
+      right: 20px;
+      z-index: 100;
+      width: 50px;
+      bottom: 65px;
+    }
+
+    @media (min-width: 320px) and (max-width: 767px) {
+      .navbar-brand>img {
+        display: block;
+        width: 80%;
+        height: auto;
+        max-height: 50px;
       }
 
-      .app-content {
-        padding-top: 0px;
-      }
-      .landing-header .menu .menu-link.active {
-        color: #b92c2c !important;
-        background-color: rgba(239, 242, 245, 0.4);
-      }
-      .menu-title-gray-600 .menu-item .menu-link {
-        color: #b92c2c;
-      }
-      .card-body img {
-        max-width: 100%;
-      }
-      .hotline {
-        border-radius: 15px;
-        border: 1px dashed #ccc;
-        padding: 20px 20px 10px 20px;
-        margin-bottom: 20px;
+      .navbar-brand>img {
+        margin-top: -10px;
+        margin-left: 10px;
       }
 
-      .fs-5 {
-        font-size: 16px;
-      }
-      .fs-5 p strong {
-        font-size: 16px;
+      .navbar.affix .navbar-brand>img {
+        padding-bottom: 5px;
       }
 
-      table {
-        border-collapse: separate;
-        border: solid 1px;
-        border-radius: 6px;
+      .pricing-content {
+        height: 275px;
         padding: 10px;
       }
-      td,
-      th {
-        border-left: solid 1px;
-        border-top: solid 1px;
-        padding: 10px;
-      }
-      th {
-        border-top: none;
-      }
-      /*td:first-child, th:first-child {border-left: none;}*/
-      tr:first-child th {
-        font-weight: bold !important;
-        border-bottom: 1px dashed !important;
-      }
-    </style>
 
+      .address-box>h2 {
+        font-size: 22px;
+      }
 
-    <style type="text/css">
-      .navbar-brand {
-        padding: 0;
-        padding-top: 10px;
-      }
-      .navbar-brand > img {
-        max-height: 150%;
-        margin-top: 0px;
-        max-width: 300px;
-      }
-      .navbar.affix .navbar-brand > img {
+      .logo {
         display: block;
         width: auto;
         height: auto;
-        max-height: 40px;
-        margin-top: 0px;
-        max-width: 280px;
-      }
-      .btn.btn-bordered-white {
-        padding: 20px;
-        font-size: 34px;
-        font-weight: bold;
-      }
-      .contact-box-inner {
-        background-color: #009e2f;
-      }
-      .contact-box-inner .address-box {
-        background-color: #009e2f;
-      }
-      .address-box {
-        padding-left: 50px;
-        padding-right: 50px;
-      }
-      .media-body > p {
-        text-align: justify;
-      }
-      .media-body > p:nth-of-type(1) {
-        font-family:Arial, Helvetica, sans-serif;
-      }
-      .media-body > h5 {
-        text-transform: none;
-      }
-      .panel-body > p > img {
-        border-radius: 15px;
-        width: 100%;
-      }
-      .product-child {
-        margin-left: -10px !important;
-      }
-      .slick-dots {
-        bottom: -50px;
-      }
-      .awesome-feature-icon span {
-        width: 45px;
-        height: 45px;
-        margin-left: 20px;
-      }
-      .awesome-feature-icon i {
-        line-height: 45px;
-      }
-      #product-area .media-left {
-        padding-right: 10px;
-      }
-      .pricing-footer {
-        margin-bottom: 30px;
-      }
-      .single-price-table {
-        margin-bottom: 30px;
       }
 
-      .pricing-head {
-        height: 60px;
-      }
-      .pricing-content {
-        height: 190px;
-        padding: 10px;
-      }
-      .info-details a {
-        color: white;
+      /*            .affix-top #navigation { background: rgba(0, 0, 0, 0) linear-gradient(to right, rgba(0, 201, 253, 0.9) 0%, rgba(129, 238, 142, 0.9) 100%) repeat scroll 0 0 }*/
+      .affix-top #navigation {
+        background: rgba(0, 0, 0, 0) linear-gradient(to right, #009e2f 0%, #9ed9b0 100%) repeat scroll 0 0;
       }
 
-      .img_nangluc {
-        padding-left: 10px;
-        padding-right: 10px;
-      }
       .img_nangluc img {
-        border-radius: 15px;
         width: 100%;
       }
-      .hiw-mockup {
-        top: 60px;
-      }
-      .section-heading h2:after {
-        background: rgba(0, 0, 0, 0)
-          url("/public/hat-nhua/img/others/line-shape-2.png") no-repeat scroll 0
-          0;
-      }
-      .member-description {
-        background: rgba(0, 0, 0, 0)
-          linear-gradient(to right, #009e2f 0%, #9ed9b0 100%) repeat scroll 0 0;
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+      #ung-dung-area .col-sm-6:nth-child(n + 3) .pricing-footer {
+        margin-bottom: 30px;
       }
 
-      #app-download-area:after {
-        height: 0;
+      .address-box>h2 {
+        font-size: 22px;
       }
+    }
 
-      /*.hinh_anh_nha_may {min-height: 480px; background-image: url('img/sliders/nha-may-abm.jpg');}*/
-      #fun-fact-area {
-        min-height: 480px;
-        background: rgba(0, 0, 0, 0)
-          url("/public/hat-nhua/img/sliders/nha-may-abm.jpg") no-repeat scroll
-          center center / cover;
+    @media (min-width: 991px) {
+      .line-2 {
+        margin-top: 50px;
       }
+    }
+  </style>
+</head>
 
-      #map {
-        background: url("/public/hat-nhua/img/maps/abmchem-location.png")
-          no-repeat scroll center center;
-      }
-      .contact-fix {
-        position: fixed;
-        right: 20px;
-        z-index: 100;
-        width: 50px;
-        bottom: 65px;
-      }
-
-      @media (min-width: 320px) and (max-width: 767px) {
-        .navbar-brand > img {
-          display: block;
-          width: 80%;
-          height: auto;
-          max-height: 50px;
-        }
-        .navbar-brand > img {
-          margin-top: -10px;
-          margin-left: 10px;
-        }
-        .navbar.affix .navbar-brand > img {
-          padding-bottom: 5px;
-        }
-        .pricing-content {
-          height: 275px;
-          padding: 10px;
-        }
-        .address-box > h2 {
-          font-size: 22px;
-        }
-        .logo {
-          display: block;
-          width: auto;
-          height: auto;
-        }
-        /*            .affix-top #navigation { background: rgba(0, 0, 0, 0) linear-gradient(to right, rgba(0, 201, 253, 0.9) 0%, rgba(129, 238, 142, 0.9) 100%) repeat scroll 0 0 }*/
-        .affix-top #navigation {
-          background: rgba(0, 0, 0, 0)
-            linear-gradient(to right, #009e2f 0%, #9ed9b0 100%) repeat scroll 0
-            0;
-        }
-        .img_nangluc img {
-          width: 100%;
-        }
-      }
-
-      @media (min-width: 768px) and (max-width: 991px) {
-        #ung-dung-area .col-sm-6:nth-child(n + 3) .pricing-footer {
-          margin-bottom: 30px;
-        }
-        .address-box > h2 {
-          font-size: 22px;
-        }
-      }
-      @media (min-width: 991px) {
-        .line-2 {
-          margin-top: 50px;
-        }
-      }
-    </style>
-  </head>
 <body>
-    <div>
-        <ul>
-            <!-- <li><a href="#">ABS Compound</a></li> -->
-            <li class="dropdown">
-              <!-- Dropdown 1 -->
-              <a
-                data-target="#dropdown-1"
-                data-toggle="collapse"
-                href="javascript:;"
-                class="collapsed"
-                aria-expanded="false"
-                >Nhựa sinh học từ sinh khối rơm rạ cây lúa mì/lúa
-                mạch
-                <span class="caret"></span>
-              </a>
-              <ul
-                class="collapse"
-                id="dropdown-1"
-                aria-expanded="false"
-              >
-                <li>
-                  <a
-                    href="/tsh-bioplastic/abs-compound-chong-chay.html"
-                    >Chống cháy</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="/tsh-bioplastic/abs-compound-chong-tinh-dien.html"
-                    >Chống tĩnh điện</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="/tsh-bioplastic/abs-compound-gia-cuong-soi-thuy-tinh.html"
-                    >Gia cường sợi thủy tinh</a
-                  >
-                </li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <!-- Dropdown 2 -->
-              <a
-                data-target="#dropdown-2"
-                data-toggle="collapse"
-                href="javascript:;"
-                class="collapsed"
-                aria-expanded="false"
-                >Nhựa sinh học từ sinh khối gỗ
-                <span class="caret"></span>
-              </a>
-              <ul
-                class="collapse"
-                id="dropdown-2"
-                aria-expanded="false"
-              >
-                <li>
-                  <a
-                    href="/tsh-bioplastic/pc-compound-chong-chay.html"
-                    >Chống cháy</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="/tsh-bioplastic/pc-compound-gia-cuong-soi-thuy-tinh.html"
-                    >Gia cường sợi thủy tinh</a
-                  >
-                </li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <!-- Dropdown 3 -->
-              <a
-                data-target="#dropdown-3"
-                data-toggle="collapse"
-                href="javascript:;"
-                class="collapsed"
-                aria-expanded="false"
-                > Nhựa sinh học từ sinh khối cây tre
-                <span class="caret"></span>
-              </a>
-              <ul
-                class="collapse"
-                id="dropdown-3"
-                aria-expanded="false"
-              >
-                <li>
-                  <a
-                    href="/tsh-bioplastic/pc-abs-compound-chong-chay.html"
-                    >Chống cháy</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="/tsh-bioplastic/pc-abs-compound-ma-dien.html"
-                    >Mạ điện</a
-                  >
-                </li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <!-- Dropdown 4 -->
-              <a
-                data-target="#dropdown-4"
-                data-toggle="collapse"
-                href="javascript:;"
-                class="collapsed"
-                aria-expanded="false"
-                >Nhựa cà phê
-                <span class="caret"></span>
-              </a>
-              <ul
-                class="collapse"
-                id="dropdown-4"
-                aria-expanded="false"
-              >
-                <li>
-                  <a
-                    href="/tsh-bioplastic/pp-compound-chong-chay.html"
-                    >Chống cháy</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="/tsh-bioplastic/pp-compound-chong-tia-uv.html"
-                    >Chống tia UV</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="/tsh-bioplastic/pp-compound-gia-cuong-soi-thuy-tinh.html"
-                    >Gia cường sợi thủy tinh</a
-                  >
-                </li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <!-- Dropdown 5 -->
-              <a
-                data-target="#dropdown-5"
-                data-toggle="collapse"
-                href="javascript:;"
-                class="collapsed"
-                aria-expanded="false"
-                >Nhựa gốc tinh bột (ngô, sắn,...)
-                <span class="caret"></span>
-              </a>
-              <ul
-                class="collapse"
-                id="dropdown-5"
-                aria-expanded="false"
-              >
-                <li>
-                  <a
-                    href="/tsh-bioplastic/pc-compound-chong-chay.html"
-                    >Chống cháy</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="/tsh-bioplastic/pc-compound-gia-cuong-soi-thuy-tinh.html"
-                    >Gia cường sợi thủy tinh</a
-                  >
-                </li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <!-- Dropdown 6 -->
-              <a
-                data-target="#dropdown-6"
-                data-toggle="collapse"
-                href="javascript:;"
-                class="collapsed"
-                aria-expanded="false"
-                >Nhựa phân hủy sinh học
-                <span class="caret"></span>
-              </a>
-              <ul
-                class="collapse"
-                id="dropdown-6"
-                aria-expanded="false"
-              >
-                <li>
-                  <a
-                    href="/tsh-bioplastic/pc-compound-chong-chay.html"
-                    >Chống cháy</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="/tsh-bioplastic/pc-compound-gia-cuong-soi-thuy-tinh.html"
-                    >Gia cường sợi thủy tinh</a
-                  >
-                </li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <!-- Dropdown 7 -->
-              <a
-                data-target="#dropdown-7"
-                data-toggle="collapse"
-                href="javascript:;"
-                class="collapsed"
-                aria-expanded="false"
-                >ABS tái sinh
-                <span class="caret"></span>
-              </a>
-              <ul
-                class="collapse"
-                id="dropdown-7"
-                aria-expanded="false"
-              >
-                <li>
-                  <a
-                    href="/tsh-bioplastic/pc-compound-chong-chay.html"
-                    >Chống cháy</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="/tsh-bioplastic/pc-compound-gia-cuong-soi-thuy-tinh.html"
-                    >Gia cường sợi thủy tinh</a
-                  >
-                </li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <!-- Dropdown 8 -->
-              <a
-                data-target="#dropdown-8"
-                data-toggle="collapse"
-                href="javascript:;"
-                class="collapsed"
-                aria-expanded="false"
-                >PP tái sinh
-                <span class="caret"></span>
-              </a>
-              <ul
-                class="collapse"
-                id="dropdown-8"
-                aria-expanded="false"
-              >
-                <li>
-                  <a
-                    href="/tsh-bioplastic/pc-compound-chong-chay.html"
-                    >Chống cháy</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="/tsh-bioplastic/pc-compound-gia-cuong-soi-thuy-tinh.html"
-                    >Gia cường sợi thủy tinh</a
-                  >
-                </li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <!-- Dropdown 9 -->
-              <a
-                data-target="#dropdown-9"
-                data-toggle="collapse"
-                href="javascript:;"
-                class="collapsed"
-                aria-expanded="false"
-                >PE tái sinh
-                <span class="caret"></span>
-              </a>
-              <ul
-                class="collapse"
-                id="dropdown-9"
-                aria-expanded="false"
-              >
-                <li>
-                  <a
-                    href="/tsh-bioplastic/pc-compound-chong-chay.html"
-                    >Chống cháy</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="/tsh-bioplastic/pc-compound-gia-cuong-soi-thuy-tinh.html"
-                    >Gia cường sợi thủy tinh</a
-                  >
-                </li>
-              </ul>
-            </li>
-          </ul>
-    </div>
+  <div>
+    <ul>
+      <!-- <li><a href="#">ABS Compound</a></li> -->
+      <li class="dropdown">
+        <!-- Dropdown 1 -->
+        <a data-target="#dropdown-1" data-toggle="collapse" href="javascript:;" class="collapsed"
+          aria-expanded="false">Nhựa sinh học từ sinh khối rơm rạ cây lúa mì/lúa
+          mạch
+          <span class="caret"></span>
+        </a>
+        <ul class="collapse" id="dropdown-1" aria-expanded="false">
+          <li>
+            <a href="/tsh-bioplastic/bio-rom-pp.html">BIO Rơm + PP</a>
+          </li>
+          <li>
+            <a href="/tsh-bioplastic/bio-rom-pe.html">BIO Rơm + PE</a>
+          </li>
+          <li>
+            <a href="/tsh-bioplastic/bio-rom-abs.html">
+              BIO RƠM + ABS</a>
+          </li>
+          <li>
+            <a href="/tsh-bioplastic/bio-rom-pla.html">
+              BIO RƠM + PLA</a>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <!-- Dropdown 2 -->
+        <a data-target="#dropdown-2" data-toggle="collapse" href="javascript:;" class="collapsed"
+          aria-expanded="false">Nhựa sinh học từ sinh khối gỗ
+          <span class="caret"></span>
+        </a>
+        <ul class="collapse" id="dropdown-2" aria-expanded="false">
+          <li>
+            <a href="/tsh-bioplastic/bio-go-pp.html">BIO GỖ + PP</a>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <!-- Dropdown 3 -->
+        <a data-target="#dropdown-3" data-toggle="collapse" href="javascript:;" class="collapsed" aria-expanded="false">
+          Nhựa sinh học từ sinh khối cây tre
+          <span class="caret"></span>
+        </a>
+        <ul class="collapse" id="dropdown-3" aria-expanded="false">
+          <li>
+            <a href="/tsh-bioplastic/bio-tre-pp.html">BIO TRE + PP</a>
+          </li>
+          <li>
+            <a href="/tsh-bioplastic/pc-abs-compound-ma-dien.html">Mạ điện</a>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <!-- Dropdown 4 -->
+        <a data-target="#dropdown-4" data-toggle="collapse" href="javascript:;" class="collapsed"
+          aria-expanded="false">Nhựa cà phê
+          <span class="caret"></span>
+        </a>
+        <ul class="collapse" id="dropdown-4" aria-expanded="false">
+          <li>
+            <a href="/tsh-bioplastic/pp-compound-chong-chay.html">Chống cháy</a>
+          </li>
+          <li>
+            <a href="/tsh-bioplastic/pp-compound-chong-tia-uv.html">Chống tia UV</a>
+          </li>
+          <li>
+            <a href="/tsh-bioplastic/pp-compound-gia-cuong-soi-thuy-tinh.html">Gia cường sợi thủy tinh</a>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <!-- Dropdown 5 -->
+        <a data-target="#dropdown-5" data-toggle="collapse" href="javascript:;" class="collapsed"
+          aria-expanded="false">Nhựa gốc tinh bột (ngô, sắn,...)
+          <span class="caret"></span>
+        </a>
+        <ul class="collapse" id="dropdown-5" aria-expanded="false">
+          <li>
+            <a href="/tsh-bioplastic/pc-compound-chong-chay.html">Chống cháy</a>
+          </li>
+          <li>
+            <a href="/tsh-bioplastic/pc-compound-gia-cuong-soi-thuy-tinh.html">Gia cường sợi thủy tinh</a>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <!-- Dropdown 6 -->
+        <a data-target="#dropdown-6" data-toggle="collapse" href="javascript:;" class="collapsed"
+          aria-expanded="false">Nhựa phân hủy sinh học
+          <span class="caret"></span>
+        </a>
+        <ul class="collapse" id="dropdown-6" aria-expanded="false">
+          <li>
+            <a href="/tsh-bioplastic/pc-compound-chong-chay.html">Chống cháy</a>
+          </li>
+          <li>
+            <a href="/tsh-bioplastic/pc-compound-gia-cuong-soi-thuy-tinh.html">Gia cường sợi thủy tinh</a>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <!-- Dropdown 7 -->
+        <a data-target="#dropdown-7" data-toggle="collapse" href="javascript:;" class="collapsed"
+          aria-expanded="false">ABS tái sinh
+          <span class="caret"></span>
+        </a>
+        <ul class="collapse" id="dropdown-7" aria-expanded="false">
+          <li>
+            <a href="/tsh-bioplastic/pc-compound-chong-chay.html">Chống cháy</a>
+          </li>
+          <li>
+            <a href="/tsh-bioplastic/pc-compound-gia-cuong-soi-thuy-tinh.html">Gia cường sợi thủy tinh</a>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <!-- Dropdown 8 -->
+        <a data-target="#dropdown-8" data-toggle="collapse" href="javascript:;" class="collapsed"
+          aria-expanded="false">PP tái sinh
+          <span class="caret"></span>
+        </a>
+        <ul class="collapse" id="dropdown-8" aria-expanded="false">
+          <li>
+            <a href="/tsh-bioplastic/pc-compound-chong-chay.html">Chống cháy</a>
+          </li>
+          <li>
+            <a href="/tsh-bioplastic/pc-compound-gia-cuong-soi-thuy-tinh.html">Gia cường sợi thủy tinh</a>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <!-- Dropdown 9 -->
+        <a data-target="#dropdown-9" data-toggle="collapse" href="javascript:;" class="collapsed"
+          aria-expanded="false">PE tái sinh
+          <span class="caret"></span>
+        </a>
+        <ul class="collapse" id="dropdown-9" aria-expanded="false">
+          <li>
+            <a href="/tsh-bioplastic/pc-compound-chong-chay.html">Chống cháy</a>
+          </li>
+          <li>
+            <a href="/tsh-bioplastic/pc-compound-gia-cuong-soi-thuy-tinh.html">Gia cường sợi thủy tinh</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 </body>
+
 </html>

@@ -1829,11 +1829,11 @@ header {
 9. FUN FACT AREA
 ===================================== */
 
-#fun-fact-area {
+/* #fun-fact-area {
   background: rgba(0, 0, 0, 0) url("img/bg/2.jpg") no-repeat scroll center
     center / cover;
   padding: 220px 0 100px;
-}
+} */
 
 .single-fact i {
   color: #fff;
@@ -3688,28 +3688,28 @@ header {
   background: transparent none repeat scroll 0 0;
 }
 
-#fun-fact-area.home-style-3:before {
+/* #fun-fact-area.home-style-3:before {
   background: rgba(0, 0, 0, 0) url("img/bg/2.jpg") no-repeat scroll center
     center / cover;
-}
+} */
 
 #team-area.home-style-3 {
   background: transparent none repeat scroll 0 0;
 }
 
-#team-area.home-style-3:before {
+/* #team-area.home-style-3:before {
   background: rgba(0, 0, 0, 0) url("img/bg/2.jpg") no-repeat scroll center
     center / cover;
-}
+} */
 
 #pricing-table-area.home-style-3 {
   background: transparent none repeat scroll 0 0;
 }
 
-#pricing-table-area.home-style-3:before {
+/* #pricing-table-area.home-style-3:before {
   background: rgba(0, 0, 0, 0) url("img/bg/2.jpg") no-repeat scroll center
     center / cover;
-}
+} */
 
 #app-download-area.home-style-3 {
   background: transparent none repeat scroll 0 0;
@@ -4642,3 +4642,30 @@ header {
 .header{
   margin-bottom: 50px;
 }
+
+.images-tsh {
+  display: flex; 
+  flex-wrap: wrap; 
+}
+
+.image-tsh {
+  width: 49%;
+}
+
+.image-tsh:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+
+@media (max-width: 768px) { 
+  .image-tsh {
+    width: 50%; 
+  }
+}
+
+@media (max-width: 480px) { 
+  .image-tsh {
+    width: 100%;
+  }
+}
+
