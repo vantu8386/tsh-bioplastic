@@ -2394,7 +2394,7 @@ header {
   width: 1px;
 }
 
-.panel-heading:before {
+/* .panel-heading:before {
   background-color: #fff;
   border: 1px solid;
   border-radius: 50px;
@@ -2406,7 +2406,7 @@ header {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   width: 15px;
-}
+} */
 
 .faq-right-img-mockup {
   left: -200px;
